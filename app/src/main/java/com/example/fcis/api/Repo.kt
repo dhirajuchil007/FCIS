@@ -9,12 +9,12 @@ object Repo {
 
     val apiService = ApiClient.getClient().create(ApiService::class.java)
 
-    fun loginFake(username: String, pwd: String): Boolean {
+    fun loginFake(staffID: String, pwd: String): Boolean {
         return true
     }
 
-     fun loginUser(username: String, pwd: String) {
-         val call = apiService.login(username, pwd)
+     fun loginUser(staffID: String, pwd: String) {
+         val call = apiService.login(staffID, pwd)
 
          call.enqueue(object : Callback<StaffModel> {
              override fun onResponse(call: Call<StaffModel>, response: Response<StaffModel>) {

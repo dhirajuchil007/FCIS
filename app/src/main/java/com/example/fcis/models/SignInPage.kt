@@ -1,8 +1,12 @@
-package com.example.fcis
+package com.example.fcis.models
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-class Sign_in_options : AppCompatActivity() {
+import com.example.fcis.R
+
+class SignInPage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_in_options)
-    }}
+        setContentView(R.layout.activity_sign_in_page)
+    }
+}
