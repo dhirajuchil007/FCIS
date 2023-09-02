@@ -13,18 +13,35 @@ object Repo {
         return true
     }
 
-     fun loginUser(staffID: String, pwd: String) {
-         val call = apiService.login(staffID, pwd)
+    fun loginUser(staffID: String, pwd: String, callback: (isSuccess: Boolean) -> Unit) {
+        val call = apiService.login(staffID, pwd)
 
-         call.enqueue(object : Callback<StaffModel> {
-             override fun onResponse(call: Call<StaffModel>, response: Response<StaffModel>) {
-                 TODO("Not yet implemented")
-             }
+        call.enqueue(object : Callback<StaffModel> {
+            override fun onResponse(call: Call<StaffModel>, response: Response<StaffModel>) {
+                callback.invoke(true)
+            }
 
-             override fun onFailure(call: Call<StaffModel>, t: Throwable) {
-                 TODO("Not yet implemented")
-             }
+            override fun onFailure(call: Call<StaffModel>, t: Throwable) {
+                callback.invoke(false)
+            }
 
-         })
-     }
+        })
+    }
+
+
+    fun createStaff(staffModel: StaffModel, callback : (result : String?)->Unit){
+        val call = apiService.createStaff(staffModel)
+
+        call.enqueue(object : Callback<String> {
+            override fun onResponse(call: Call<String>, response: Response<String>) {
+                callback.invoke(response.body()!!)
+            }
+
+            override fun onFailure(call: Call<String>, t: Throwable) {
+                callback.invoke(t.message?.toString())
+            }
+
+        })
+
+    }
 }

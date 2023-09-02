@@ -6,8 +6,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
 import com.example.fcis.api.Repo
 
 const val BASE_URL="https://jsonplaceholder.typicode.com/"
@@ -24,16 +22,6 @@ class LoginPage : AppCompatActivity() {
 
 
      */
-     */
-     */
-     */
-     */
-     */
-     */
-*/
- */
- */
- */
 
     // 3 buttons
     var loginBtn: Button? = null
@@ -50,7 +38,7 @@ class LoginPage : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login_page)
+        setContentView(R.layout.activity_login_page_new)
 
 
 
@@ -63,7 +51,7 @@ class LoginPage : AppCompatActivity() {
          signInBtn= findViewById(R.id.buttonSignInOptions)
 
 
-        loginBtn.setOnClickListener(object : View.OnClickListener() {
+        loginBtn?.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
 
                 // store the returned value of the dedicated function which checks
@@ -73,35 +61,47 @@ class LoginPage : AppCompatActivity() {
                 // the boolean variable turns to be true then
                 // only the user must be proceed to the activity2
                 if (isAllFieldsChecked) {
-                    val i = Intent(this@LoginPage, HomePage::class.java)
-                    startActivity(i)
+                    Repo.loginUser(staffId?.text.toString(),password?.text.toString()){
+                        if(it==true){
+                            goToHomePage()
+                        }
+                        else{
+                            showError()
+                        }
+                    }
                 }
             }
+        })
 
-        private fun CheckAllFields(): Boolean {
-            if (staffId.length() == 0) {
-                staffId!!.error = "This field is required"
-                return false
-            }
-            if (password!!.length() == 0) {
-                password!!.error = "Password is required"
-                return false
-
-            } else if (password!!.length() < 8) {
-                password!!.error = "Password must be minimum 8 characters"
-                return false
-            }
-
-            // after all validation return true.
-            return true
         }
+
+    private fun showError() {
+        //show alert username of password is incorrect
     }
-                Repo.loginUser(staffId, password)
 
+    private fun goToHomePage() {
+        val i = Intent(this@LoginPage, HomePage::class.java)
+        startActivity(i)
+    }
 
-
-
+    fun CheckAllFields(): Boolean {
+        if (staffId?.length() == 0) {
+            staffId!!.error = "This field is required"
+            return false
         }
+        if (password!!.length() == 0) {
+            password!!.error = "Password is required"
+            return false
+
+        } else if (password!!.length() < 8) {
+            password!!.error = "Password must be minimum 8 characters"
+            return false
+        }
+
+        // after all validation return true.
+        return true
+    }
+}
 
 
 

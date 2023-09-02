@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/background_black_contour_main"
+    android:layout_height="match_parent">
+<ImageView
+    android:layout_margin="30dp"
+    android:src="@drawable/fcis_new_logo"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:background="@drawable/blue_login_tab"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="500dp"
+        android:layout_height="500dp">
+        <EditText
+            android:id="@+id/staffIdTab"
+            android:layout_width="305dp"
+            android:layout_height="48dp"
+            android:backgroundTint="@color/white"
+            android:ems="10"
+            android:inputType="text"
+            android:hint=" Staff ID"
+            android:textColorHint="@color/white"
+            android:layout_marginRight="0dp"
+            android:textColor="#FFFFFF"
+             />
+
+        <EditText
+            android:id="@+id/passwordTab"
+            android:layout_width="305dp"
+            android:layout_height="49dp"
+            android:backgroundTint="@color/white"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:hint="Password"
+            android:textColorHint="@color/white"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="0dp"
+            android:textColor="#FFFFFF"
+            />
+        <TextView
+            android:id="@+id/buttonForgotPassword"
+            android:layout_width="305dp"
+            android:layout_height="61dp"
+            android:background="@null"
+            android:backgroundTint="@null"
+            android:textAlignment="textEnd"
+            android:layout_marginLeft="10dp"
+            android:text="Forgot Password?"
+            android:onClick="btnForgetPassword"
+            android:textColor="@color/white"
+             />
+
+        <Button
+            android:id="@+id/buttonLogIn"
+            android:layout_width="136dp"
+            android:layout_height="48dp"
+            android:background="@drawable/rounded_button"
+            android:text="Login"
+            android:textColor="@color/white"
+           />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonSignInOptions"
+        android:layout_width="189dp"
+        android:layout_height="61dp"
+        android:background="@null"
+        android:backgroundTint="@null"
+        android:text="Sign-In Options"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="50dp"
+        android:onClick="btnSignIn"
+        android:textColor="@color/white"
+        />
+
+</RelativeLayout>
