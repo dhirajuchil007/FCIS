@@ -6,9 +6,9 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import com.example.fcis.api.Repo
 
-const val BASE_URL="https://jsonplaceholder.typicode.com/"
 class LoginPage : AppCompatActivity() {
 
     /*getMyData(),
@@ -31,7 +31,7 @@ class LoginPage : AppCompatActivity() {
     // 3 texts fields
     var staffId: EditText? = null
     var password: EditText? = null
-    var message : EditText? = null
+    var message : TextView? = null
 
     // boolean variable to check whether all the text fields are filled by the user, properly or not.
     var isAllFieldsChecked = false
