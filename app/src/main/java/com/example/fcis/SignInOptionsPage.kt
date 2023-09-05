@@ -1,6 +1,5 @@
 package com.example.fcis
 
-import android.R
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -35,8 +34,8 @@ class SignInOptionsPage : AppCompatActivity() {
         confPassword=findViewById(R.id.edtSignUpConfirmPassword)
         txtSignIn = findViewById<TextView>(R.id.txtSignIn)
 
-                txtSignIn.setOnClickListener(View.OnClickListener {
-            val intent = Intent(this@activity_sign_in_options_page, LoginPage::class.java)
+                txtSignIn?.setOnClickListener(View.OnClickListener {
+            val intent = Intent(this@SignInOptionsPage, LoginPage::class.java)
             startActivity(intent)
             finish()
 
