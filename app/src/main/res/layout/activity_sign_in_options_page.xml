@@ -70,6 +70,14 @@
                 android:singleLine="true"
                 android:textColor="@color/white" />
 
+            <Spinner
+                android:id="@+id/roleTypeSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+            </Spinner>
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout

@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">FCIS</string>
+
+    <string-array name="role_type">
+        <item> administrator</item>
+        <item> manager</item>
+        <item>receptionist</item>
+        <item> universal_banker</item>
+
+    </string-array>
+
 </resources>
