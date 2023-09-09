@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="center"
     android:background="@drawable/background_black_contour_main"
     android:layout_height="match_parent">
-<ImageView
-    android:layout_margin="30dp"
-    android:src="@drawable/fcis_new_logo"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:layout_margin="30dp"
+        android:src="@drawable/fcis_new_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
     <LinearLayout
         android:layout_width="500dp"
@@ -18,22 +20,38 @@
         android:gravity="center"
         android:orientation="vertical">
 
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp">
 
-        <ImageView
-            android:id="@+id/imageView"
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="176dp"
+                android:src="@drawable/iconloginpage"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/iconLoginPage"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_launcher_foreground"
+                >
+
+            </ImageView>
 
 
-        </ImageView>
 
         <EditText
             android:id="@+id/staffIdTab"
@@ -42,29 +60,38 @@
             android:layout_marginRight="0dp"
             android:backgroundTint="@color/white"
             android:ems="10"
-            android:drawableStart="@drawable/ic_launcher_foreground"
-            android:drawableLeft="@drawable/ic_launcher_foreground"
             android:drawablePadding="24dp"
             android:hint=" Staff ID"
             android:inputType="text"
             android:textColor="#FFFFFF"
             android:textColorHint="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_launcher_key_password">
+
+            </ImageView>
+
 
         <EditText
             android:id="@+id/passwordTab"
             android:layout_width="305dp"
-            android:layout_height="49dp"
-            android:layout_marginTop="30dp"
+            android:layout_height="48dp"
             android:layout_marginRight="0dp"
             android:backgroundTint="@color/white"
-            android:drawableStart="@drawable/ic_launcher_key_password"
             android:drawablePadding="5dp"
             android:ems="10"
             android:hint="Password"
             android:inputType="textPassword"
             android:textColor="#FFFFFF"
             android:textColorHint="@color/white" />
-
+        </LinearLayout>
         <TextView
             android:id="@+id/buttonForgotPassword"
             android:layout_width="305dp"
