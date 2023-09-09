@@ -6,6 +6,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.Adapter
 import android.widget.AdapterView
+import android.widget.AdapterView.OnItemSelectedListener
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
@@ -14,7 +15,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 
-class SignInOptionsPage : AppCompatActivity() {
+class SignInOptionsPage : AppCompatActivity(), OnItemSelectedListener {
 
     // 1 button
     var signUp: Button? = null
@@ -22,7 +23,7 @@ class SignInOptionsPage : AppCompatActivity() {
     // 7 texts fields
     var fullName: EditText? = null
     var password: EditText? = null
-    var branchType : TextView? = null
+    var branch : TextView? = null
     var txtSignIn: TextView? = null
     var email: EditText? = null
     var confPassword: EditText? = null
@@ -30,6 +31,7 @@ class SignInOptionsPage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in_options_page)
 
+        val Branch_spinner = findViewById<Spinner>(R.id.branchSpinner)
         val roleType_spinner = findViewById<Spinner>(R.id.roleTypeSpinner)
         val arrayAdapter = ArrayAdapter.createFromResource(
             this,
@@ -37,18 +39,11 @@ class SignInOptionsPage : AppCompatActivity() {
             android.R.layout.simple_spinner_item
         )
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinner.adapter = arrayAdapter
-        spinner.onItenSelectListener = this
-
-    override fun onItemSelected(parent: adapterView<*>?, view: View?, position:int, id:Long) {
-         val text= adapterView?.getItemAtPosition(position).toString ()     }
-    override fun onNothingSelected(parent: AdapterView<*>? ){
-        TODO("Not yet implemented")
-    }
-
+        roleType_spinner.adapter = arrayAdapter
+        roleType_spinner.onItemSelectedListener= this
 
         fullName=findViewById(R.id.edtSignUpFullName)
-        branchType =findViewById(R.id.edtSignUpFullName)
+        branch =findViewById(R.id.edtSignUpFullName)
         email =findViewById(R.id.edtSignUpEmail)
         password =findViewById(R.id.edtSignUpPassword)
         confPassword=findViewById(R.id.edtSignUpConfirmPassword)
@@ -61,5 +56,13 @@ class SignInOptionsPage : AppCompatActivity() {
 
     })
   }
+
+    override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onNothingSelected(parent: AdapterView<*>?) {
+        TODO("Not yet implemented")
+    }
 }
 

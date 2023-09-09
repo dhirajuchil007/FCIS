@@ -29,7 +29,7 @@
                 android:id="@+id/imageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/icon_Sign_In_Page"
+                android:src="@drawable/icon_sign_in_page"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -37,7 +37,7 @@
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/signInOptionTitle"
+                android:src="@drawable/signinoptiontitle"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -72,6 +72,14 @@
 
             <Spinner
                 android:id="@+id/roleTypeSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+            </Spinner>
+
+            <Spinner
+                android:id="@+id/branchSpinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 

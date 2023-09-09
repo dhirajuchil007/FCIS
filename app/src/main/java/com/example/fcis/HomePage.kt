@@ -8,10 +8,10 @@ import androidx.appcompat.app.AlertDialog
 
 class HomePage : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    /*private lateinit var binding: ActivityHomePageBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityHomePageBinding.inflate(layoutInflater)
         setContentView(binding.root)
         emailFocusListener()
         passwordFocusListener()
@@ -150,7 +150,7 @@ class HomePage : AppCompatActivity() {
             return "Must be 10 Digits"
         }
         return null
-    }
+    }*/
 }
 
 
