@@ -6,14 +6,15 @@ import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Query
 
 interface ApiService {
     @POST("/login")
-    fun login(username:String, pwd:String): Call<StaffModel>
+    fun login(@Query("username") username: String, @Query("password") pwd: String): Call<StaffModel>
 
-   /* @GET("posts")
-    fun getData(): Call<List<MyDataItem>>*/
+    /* @GET("posts")
+     fun getData(): Call<List<MyDataItem>>*/
 
     @POST("/createStaff/")
-    fun createStaff(@Body staffModel: StaffModel) : Call<String>
+    fun createStaff(@Body staffModel: StaffModel): Call<String>
 }

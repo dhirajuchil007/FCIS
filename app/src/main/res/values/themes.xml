@@ -2,8 +2,12 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.FCIS" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your light theme here. -->
+        <item name="android:textColorHint">@color/white</item>
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
+    <style name="Base.Theme.FCIS.Material" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:textColorHint">@color/white</item>
+    </style>
     <style name="Theme.FCIS" parent="Base.Theme.FCIS" />
 </resources>

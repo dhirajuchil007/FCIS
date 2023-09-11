@@ -2,21 +2,25 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_gravity="center"
     android:background="@drawable/background_black_contour_main"
     android:layout_height="match_parent">
 
     <ImageView
+        android:id="@+id/logo"
         android:layout_margin="30dp"
         android:src="@drawable/fcis_new_logo"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"/>
 
     <LinearLayout
-        android:layout_width="500dp"
-        android:layout_height="500dp"
+        android:padding="10dp"
+        android:layout_width="375dp"
+        android:layout_height="375dp"
         android:layout_centerInParent="true"
         android:background="@drawable/blue_login_tab"
+        android:layout_below="@id/logo"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -28,9 +32,9 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="176dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 android:src="@drawable/iconloginpage"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -39,7 +43,8 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
@@ -55,8 +60,8 @@
 
         <EditText
             android:id="@+id/staffIdTab"
-            android:layout_width="305dp"
-            android:layout_height="48dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginRight="0dp"
             android:backgroundTint="@color/white"
             android:ems="10"
@@ -68,8 +73,9 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
             android:orientation="horizontal">
             <ImageView
                 android:layout_width="48dp"
@@ -81,7 +87,7 @@
 
         <EditText
             android:id="@+id/passwordTab"
-            android:layout_width="305dp"
+            android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginRight="0dp"
             android:backgroundTint="@color/white"
@@ -89,14 +95,15 @@
             android:ems="10"
             android:hint="Password"
             android:inputType="textPassword"
+            android:imeOptions="actionDone"
             android:textColor="#FFFFFF"
             android:textColorHint="@color/white" />
         </LinearLayout>
         <TextView
             android:id="@+id/buttonForgotPassword"
-            android:layout_width="305dp"
-            android:layout_height="61dp"
-            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
             android:background="@null"
             android:backgroundTint="@null"
             android:onClick="btnForgetPassword"
@@ -106,6 +113,7 @@
 
 
         <Button
+            android:layout_marginTop="16dp"
             android:id="@+id/buttonLogIn"
             android:layout_width="136dp"
             android:layout_height="48dp"
@@ -114,12 +122,13 @@
             android:textColor="@color/white" />
 
         <TextView
-
+            android:padding="8dp"
+            tools:text="lololo"
             android:id="@+id/messageTextBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:textColor="@color/white" />
+            android:textColor="@color/red" />
 
     </LinearLayout>
 
